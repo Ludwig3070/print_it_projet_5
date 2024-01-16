@@ -59,13 +59,11 @@ function traitement(n = "+") {
 
 	/* controle la valeur max de bullet_active sinon depassement */
 	bullet_actif === bullet.length ? (bullet_actif = 0) : null;
-	/* ajoute dot_selected au slecteur actif */
+	/* ajoute dot_selected au selecteur actif */
 	bullet[bullet_actif].classList.add("dot_selected");
 	/* AFFICHAGE DE L IMAGE CORRSESPONDANTE A bullet_actif */
 	let banner = document.querySelector("#banner img ");
-	banner.setAttribute(
-		"src",
-		`./assets/images/slideshow/${slides[bullet_actif].image}`
+	banner.setAttribute("src",`./assets/images/slideshow/${slides[bullet_actif].image}`
 	);
 	/* changement du texte selon la valeur de bullet_actif */
 	let texte = document.querySelector("#banner p");
@@ -77,3 +75,8 @@ function traitement(n = "+") {
 arrowRight.addEventListener("click", () => traitement());
 /* capture du clic gauche */
 arrowLeft.addEventListener("click", () => traitement("-"));
+
+
+/* option de defilement auto ts les 5 secondes */
+
+/* setInterval ("traitement()",5000) */
